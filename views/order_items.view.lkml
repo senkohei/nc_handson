@@ -73,6 +73,10 @@ view: order_items {
     type: average
     sql: ${sale_price} ;;  }
 
+  measure: average_sale_price_2 {
+    type: average
+    sql: ${sale_price} ;;  }
+
   dimension_group: shipped {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
