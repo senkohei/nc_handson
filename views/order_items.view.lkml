@@ -18,7 +18,7 @@ view: order_items {
 
   dimension_group: created {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
+    timeframes: [raw, time, minute30, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
 
@@ -34,6 +34,11 @@ view: order_items {
   dimension: inventory_item_id {
     type: number
     sql: ${TABLE}.inventory_item_id ;;
+  }
+
+  dimension: week {
+    type: string
+    sql: date_trunc(${TABLE}.delivered_at, week) ;;
   }
 
   dimension: order_id {
