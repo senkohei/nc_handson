@@ -26,6 +26,7 @@ view: order_items {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.delivered_at ;;
+    drill_fields: [delivered_month, delivered_quarter]
   }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.

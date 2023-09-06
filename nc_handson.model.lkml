@@ -21,4 +21,8 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 
 explore: order_items {
   view_name: order_items
+  join: products {
+    sql_on: ${order_items.product_id} = ${products.id} ;;
+    relationship: many_to_one
+  }
 }
